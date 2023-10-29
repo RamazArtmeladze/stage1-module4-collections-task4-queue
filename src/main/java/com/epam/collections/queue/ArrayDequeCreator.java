@@ -7,10 +7,12 @@ public class ArrayDequeCreator {
         ArrayDeque<Integer> arrayDeque = new ArrayDeque<>();
 
         while (!firstQueue.isEmpty() && !secondQueue.isEmpty()) {
-            arrayDeque.add(firstQueue.poll());
-            arrayDeque.add(secondQueue.poll());
-            firstQueue.add(arrayDeque.poll());
-            firstQueue.add(secondQueue.poll());
+            int firstElement = firstQueue.poll();
+            int secondElement = secondQueue.poll();
+            arrayDeque.add(firstElement);
+            arrayDeque.add(secondElement);
+            firstQueue.add(firstElement);
+            firstQueue.add(secondElement);
         }
 
         while (!firstQueue.isEmpty()) {
