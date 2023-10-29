@@ -9,7 +9,7 @@ public class ArrayDequeCreator {
 
         while (!firstQueue.isEmpty() && !secondQueue.isEmpty()) {
             // Take the top card from ArrayDeque and add it to the end of the player's Queue
-            firstQueue.offer(arrayDeque.poll());
+            arrayDeque.add(firstQueue.poll());
 
             // Add two cards to the ArrayDeque from both players
             arrayDeque.add(firstQueue.poll());
@@ -18,19 +18,13 @@ public class ArrayDequeCreator {
 
         // Handle any remaining cards
         while (!firstQueue.isEmpty()) {
-            firstQueue.offer(arrayDeque.poll());
             arrayDeque.add(firstQueue.poll());
         }
 
         while (!secondQueue.isEmpty()) {
-            secondQueue.offer(arrayDeque.poll());
             arrayDeque.add(secondQueue.poll());
         }
 
         return arrayDeque;
     }
 }
-
-
-
-
