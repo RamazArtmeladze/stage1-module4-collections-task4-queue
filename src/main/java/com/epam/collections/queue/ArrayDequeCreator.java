@@ -8,6 +8,9 @@ public class ArrayDequeCreator {
         ArrayDeque<Integer> arrayDeque = new ArrayDeque<>();
 
         while (!firstQueue.isEmpty() && !secondQueue.isEmpty()) {
+            // Take the top card from ArrayDeque and add it to the end of the player's Queue
+            arrayDeque.add(firstQueue.poll());
+
             // Add two cards to the ArrayDeque from both players
             arrayDeque.add(firstQueue.poll());
             arrayDeque.add(secondQueue.poll());
